@@ -1,25 +1,21 @@
-Ember is designed to minimize the amount of configuration necessary to get an
-application up and running.  To do this, a number of peripheral tasks to
-application development have been streamlined, such as testing, compiling, and
-serving files.  This allows Ember developers to focus on building apps rather
+Ember CLI, Ember's command line interface, provides a standard project
+structure, a set of development tools, and an addon system.
+This allows Ember developers to focus on building apps rather
 than building the support structures that make them run.
+In the terminal, a quick `ember --help` shows
+the commands Ember CLI provides. For more information on a specific command,
+type `ember help <command-name>`.
 
-Ember includes a _command line interface_ called Ember CLI with helpful tools
-that are immediately available.  In the terminal, a quick `ember --help` shows
-the commands we can use.  For more information on a specific command, we can
-type `ember help <command-name>`.  This shows us the details of how the command is
-  used.
+## Creating a New App
 
-## Creating a New Ember App
-
-To start a new project called `super-rentals`, we navigate to the directory
-where we want to work and use the `new` command:
+To create a new project using Ember CLI, use the `new` command. In preparation
+for the tutorial in the next section, you can make an app called `super-rentals`.
 
 ```shell
 ember new super-rentals
 ```
 
-## The Ember CLI Directory Structure
+## Directory Structure
 
 The `new` command generates a project structure with the following files and
 directories:
@@ -42,26 +38,26 @@ README.md
 testem.json
 ```
 
-Let's quickly take a look at the anatomy of an Ember application.
+Let's take a look at the folders and files Ember CLI generates.
 
 **app**: This is where folders and files for models, components, routes,
-templates and styles are stored. As we'll see, the majority of our coding on a
+templates and styles are stored. The majority of your coding on an Ember
 project happens in this folder.
 
-**bower_components / _bower.json**: **bower** is a dependency management tool.
+**bower_components / _bower.json**: **Bower** is a dependency management tool.
 It is used in Ember to manage front-end plugins and component dependencies
-(HTML, CSS, JavaScript, etc).  All bower components are installed in the
+(HTML, CSS, JavaScript, etc).  All Bower components are installed in the
 bower_components directory.  If we open `bower.json`, we see the list of
 dependencies that are installed automatically including Ember, jQuery, Ember
 Data and QUnit (for testing). If we add additional front-end dependencies,
 such as `bootstrap`, we will see them listed here and added to the
 `bower_components` directory.
 
-**config**: The config directory contains the _environment.js_ file which lists
-environmental settings for our app.
+**config**: The config directory contains the _environment.js_ where you can
+configure settings for your app.
 
 **dist**: When we build our app for deployment, the output files will be created
-  here.
+here.
 
 **node_modules / package.json**: This directory and file are from **npm**.
 _npm_ is the package manager for Node.js. Ember is built with Node and uses a
@@ -74,7 +70,7 @@ are installed in the node_modules directory.
 **public**: This directory contains assets such as images and fonts.
 
 **vendor**: This directory is where front-end dependencies (such as JavaScript
-or CSS) that are NOT managed by bower go.
+or CSS) that are not managed by Bower go.
 
 **tests / testem.json**: Automated tests for our app go in the `tests` folder,
 and Ember CLI's test runner **testem** is configured in `testem.json`.
@@ -109,13 +105,13 @@ export default Router;
 Ember CLI uses ECMAScript 6 (or ES6 for short) modules to organize application
 code.
 For example, the line `import Ember from 'ember';` gives us access to the actual
-  Ember.js library as the variable `Ember`. And the `import config from
-  './config/environment';` line gives us access to our app's configuration data
-  as the variable `config`. At the end of the file, `export default Router;
-  ` makes the `Router` variable defined in this file available to other parts
-  of the app.
+Ember.js library as the variable `Ember`. And the `import config from
+'./config/environment';` line gives us access to our app's configuration data
+as the variable `config`. At the end of the file, `export default Router;
+` makes the `Router` variable defined in this file available to other parts
+of the app.
 
-## Starting the Ember Development Server
+## The Development Server
 
 Once we have a new project in place, we can confirm everything is working by
 starting the Ember development server:
